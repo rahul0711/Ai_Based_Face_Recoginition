@@ -6,6 +6,9 @@ import adminRoutes from "./routes/adminRoutes.js";
 import scanRoutes from "./routes/scanRoutes.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import path from "path";
+import { verifyEmailService } from "./services/nodemailer.js";
+
+
 dotenv.config()
 
 const app = express()
@@ -25,7 +28,7 @@ app.use((req, res, next) => {
 });
 
 checkDBConnection()
-
+verifyEmailService();
 
 app.use("/api/admin", adminRoutes);
 app.use("/api/scan", scanRoutes);

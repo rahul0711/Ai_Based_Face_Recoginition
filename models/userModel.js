@@ -57,14 +57,16 @@ export const createUser = async ({
 
 export const getUserByAzurePersonId = async (azurePersonId) => {
   const [rows] = await pool.execute(
-    `SELECT id, FirstName, LastName, UpdateDate
-     FROM FaceregistringUsers
-     WHERE azure_person_id = ?`,
+    `
+    SELECT id, FirstName, Email, ShowName
+    FROM FaceregistringUsers
+    WHERE azure_person_id = ?
+    `,
     [azurePersonId]
   );
-
   return rows[0];
 };
+
 
 export const updateLastSeen = async (id) => {
   await pool.execute(

@@ -114,3 +114,13 @@ export const trainGroup = async () => {
     console.error("⚠️ Azure training failed:", err.response?.data || err.message);
   }
 };
+
+
+
+export const deletePerson = async (personId) => {
+  await axiosInstance.delete(
+    `/face/v1.0/persongroups/${personGroupId}/persons/${personId}`,
+    { headers: jsonHeaders }
+  );
+  console.log("🗑️ Azure person deleted:", personId);
+};
