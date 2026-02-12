@@ -37,7 +37,9 @@ app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
-
+app.get("/welcome",(req,res)=>{
+  res.json({message:"welcome to the domain"})
+})
 app.listen(process.env.PORT, "0.0.0.0",() => {
     console.log(`Server running on port ${process.env.PORT}`)
 });
