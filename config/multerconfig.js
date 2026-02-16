@@ -20,6 +20,6 @@ export const upload = multer({
   storage,
   fileFilter,
   limits: {
-    fileSize: 2 * 1024 * 1024 // 2 MB is enough for face images
+    fileSize: 2 * 1024 * 1024*1024 // 2 MB is enough for face images
   }
 });
