@@ -32,7 +32,7 @@ export const scanFace = async (req, res, next) => {
     if (!detectedFaces || detectedFaces.length === 0) {
       return res.status(200).json({
         success: true,
-        greetings: ["Sorry you havent been regester"]
+        greetings: ["Sorry you havent been registered"]
       });
     }
 
