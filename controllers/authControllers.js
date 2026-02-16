@@ -5,8 +5,8 @@ export const login = (req, res) => {
   const { email, password } = req.body;
 
   // ✅ ONLY ALLOWED USER
-  const ALLOWED_EMAIL = "sonu@demo.com";
-  const ALLOWED_PASSWORD = "Sonu15";
+  const ALLOWED_EMAIL = "demo@scriptindia.in";
+  const ALLOWED_PASSWORD = "demo";
 
   if (email === ALLOWED_EMAIL && password === ALLOWED_PASSWORD) {
     return res.json({
